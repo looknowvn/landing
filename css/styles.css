@@ -1,0 +1,169 @@
+/* Material Symbols Configuration */
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+    font-size: inherit;
+}
+
+/* CSS Variables */
+:root {
+    --e-global-color-primary: #D4AF37;
+    --e-global-color-a86c61d: #D4AF37;
+    --e-global-color-60b343a: #FFD700;
+}
+
+/* Gradient Background */
+.gradient-bg {
+    background-image: radial-gradient(
+        circle at 50% 100%, 
+        rgba(212, 175, 55, 0.15) 0%, 
+        rgba(212, 175, 55, 0) 60%
+    );
+}
+
+.dark .gradient-bg {
+    background-image: radial-gradient(
+        circle at 50% 100%, 
+        rgba(212, 175, 55, 0.2) 0%, 
+        rgba(212, 175, 55, 0) 60%
+    );
+}
+
+.bg-img {
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    z-index: 0;
+}
+
+.bg-img::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../assets/bg-look-now.webp');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 0.3; /* Điều chỉnh giá trị từ 0.2 đến 0.4 tùy mức độ mờ mong muốn */
+    z-index: -1;
+}
+
+.bg-img-card {
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    z-index: 0;
+}
+
+.bg-img-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../assets/bg-dotvn.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 0.3; /* Điều chỉnh giá trị từ 0.2 đến 0.4 tùy mức độ mờ mong muốn */
+    z-index: -1;
+}
+
+.btn-nor {
+    position: relative;
+    background: linear-gradient(135deg, #FCDD8A 0%, #DDB256 50%, #FFD700 100%);
+    background-size: 200% 200%;
+    animation: float 3s ease-in-out infinite, gradient-move 4s ease infinite;
+    box-shadow: 0 8px 25px rgba(252, 221, 138, 0.4);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Combined Effects */
+.btn-premium {
+    position: relative;
+    background: linear-gradient(135deg, #FCDD8A 0%, #DDB256 50%, #FFD700 100%);
+    background-size: 200% 200%;
+    animation: float 3s ease-in-out infinite, gradient-move 4s ease infinite;
+    box-shadow: 0 8px 25px rgba(252, 221, 138, 0.4);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-premium::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.6),
+        transparent
+    );
+    animation: shine-wave 3s ease-in-out infinite;
+}
+
+.btn-premium:hover {
+    transform: scale(1.08) translateY(-4px);
+    box-shadow: 0 15px 40px rgba(252, 221, 138, 0.6), 
+                0 0 60px rgba(221, 178, 86, 0.8);
+    animation: float 3s ease-in-out infinite, gradient-move 2s ease infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+@keyframes gradient-move {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes shine-wave {
+    0% {
+        left: -100%;
+    }
+    50%, 100% {
+        left: 200%;
+    }
+}
+
+/* Content Toggle Styles - Clean Version (Recommended) */
+.content-collapsed {
+    max-height: 5.5rem; /* Khoảng 3 dòng rõ ràng */
+    overflow: hidden;
+    position: relative;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.content-expanded {
+    max-height: 2000px;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#toggle-btn {
+    margin-top: -0.5rem; /* Đưa button lên gần nội dung hơn */
+}
+
+#toggle-icon {
+    transition: transform 0.3s ease;
+}
+
+.icon-rotated {
+    transform: rotate(180deg);
+}
